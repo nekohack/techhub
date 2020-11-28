@@ -1,0 +1,70 @@
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
+
+type SEOPropTypes = {
+    title: string
+    description: string
+    image: string
+    pathname: string
+    article: boolean
+}
+
+const SEO = ({
+    title,
+    description,
+    image,
+    pathname,
+    article,
+}: SEOPropTypes) => (
+    <StaticQuery
+        query={query}
+        render={({
+            site: {
+                siteMetadata: { title, titleTemplate, description, url, image },
+            },
+        }) => {
+            const seo = {
+                title: title,
+                description: description,
+                image: image,
+                url: `${url}${pathname || '/'}`,
+            }
+            return (
+                <Helmet title={seo.title} titleTemplate={titleTemplate}>
+                    <meta name="image" content={seo.image} />
+                    <meta name="description" content={seo.description} />
+                    <meta property="og:url" content={seo.url} />
+                    <meta property="og:image" content={seo.image} />
+                    <meta property="og:title" content={seo.title} />
+                    <meta property="og:description" content={seo.description} />
+                    <meta property="og:type" content="website" />
+                </Helmet>
+            )
+        }}
+    />
+)
+
+export default SEO
+
+SEO.defaultProps = {
+    title: null,
+    description: null,
+    image: null,
+    pathname: null,
+    article: false,
+}
+
+const query = graphql`
+    query SEO {
+        site {
+            siteMetadata {
+                title
+                titleTemplate
+                description
+                url
+                image
+            }
+        }
+    }
+`

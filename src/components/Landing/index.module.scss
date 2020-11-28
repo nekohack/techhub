@@ -1,0 +1,126 @@
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 40vh;
+    min-width: 320px;
+    max-width: 1366px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    scroll-behavior: smooth;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+        color: #35495e;
+        font-size: 3.4vmax;
+    }
+
+    h2 {
+        text-align: center;
+        color: #606060;
+        font-size: 1.6vmax;
+    }
+
+    img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.social {
+    box-sizing: border-box;
+    min-width: 0;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    margin: 0;
+}
+
+.title {
+    min-height: 100vh;
+    min-width: 320px;
+    max-width: 1366px;
+    padding: 0;
+    margin: 0 4%;
+}
+
+.sites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.site {
+    margin: 16px;
+
+    a {
+        color: #ffffff;
+    }
+}
+
+
+.shadow {
+    box-shadow: 7px 8px 30px 1px rgba(0,0,0,.4);
+    transition: box-shadow 0.3s;
+
+    :hover {
+        box-shadow: 27px 28px 55px 1px rgba(0,0,0,.4);
+    }
+}
+
+.bg1 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -2;
+    border-top: 35vh solid #fff6ed;
+    border-right: 95vw solid transparent;
+}
+
+.bg2 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -2;
+    border-top: 38vh solid #42b883;
+    border-right: 50vw solid transparent;
+}
+
+.bg3 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -2;
+    right: 0;
+    border-top: 25vh solid #35495e;
+    border-left: 75vw solid transparent;
+}
+
+@media screen and (min-width: 768px) {
+    .bg1 {
+        border-top-width: 80vh;
+        border-right-width: 60vw;
+    }
+
+    .bg2 {
+        border-top-width: 80vh;
+        border-right-width: 35vw;
+    }
+
+    .bg3 {
+        border-top-width: 35vh;
+        border-left-width: 60vw;
+    }
+}
