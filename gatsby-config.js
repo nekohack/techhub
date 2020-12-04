@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `nekohack Portal`,
     titleTemplate: `%s | Portal`,
-    description: `We provide IT services`,
+    description: `nekohack gives your complex the opportunity to increase the percentage of happiness, enjoyment of your staff and as a result, bring productivity to your workspace.`,
     author: `Yuma Kitamura`,
     locale: `Osaka, Kyoto in Japan`,
     url: `https://yuukit.me/`,
