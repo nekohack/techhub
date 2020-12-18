@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Hero from '../Hero'
 import Avatar from '../Avatar'
 import Landing from '../Landing'
+import Products from '../Products'
 import GMMarker from '../GMMarker'
 import Footer from '../Footer'
 
@@ -16,6 +17,40 @@ const Home: FC = () => {
                     locale
                 }
             }
+            blogImage: file(relativePath: { eq: "icons/webneko-blog.png" }) {
+                childImageSharp {
+                    fixed(width: 120, height: 120) {
+                        ...GatsbyImageSharpFixed
+                    }
+                }
+            }
+            performanceImage: file(
+                relativePath: { eq: "icons/performance.png" }
+            ) {
+                childImageSharp {
+                    fixed(width: 120, height: 120) {
+                        ...GatsbyImageSharpFixed
+                    }
+                }
+            }
+            routineImage: file(relativePath: { eq: "icons/routine.png" }) {
+                childImageSharp {
+                    fixed(width: 120, height: 120) {
+                        ...GatsbyImageSharpFixed
+                    }
+                }
+            }
+            allSitesYaml {
+                edges {
+                    node {
+                        id
+                        name
+                        imageName
+                        url
+                        type
+                    }
+                }
+            }
         }
     `)
 
@@ -24,6 +59,12 @@ const Home: FC = () => {
             <Hero title="Hi, I'm Yuma Kitamura" />
             <Avatar />
             <Landing data={data?.site?.siteMetadata} />
+            <Products
+                blogImage={data?.blogImage}
+                performanceImage={data?.performanceImage}
+                routineImage={data?.routineImage}
+                data={data?.allSitesYaml.edges}
+            />
             <GMMarker />
             <Footer />
         </>
