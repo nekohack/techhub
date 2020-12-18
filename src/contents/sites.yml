@@ -1,0 +1,8 @@
+- name: Web猫ブログ
+  imageName: blog
+  url: https://webneko.dev/
+  type: Technical blog
+- name: Web猫ブログ
+  imageName: bakeneko2
+  url: https://yuukit.me/
+  type: Profile website
