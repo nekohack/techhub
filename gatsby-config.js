@@ -17,7 +17,7 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require(`sass`),
-      }
+      },
     },
     `gatsby-plugin-typescript`,
     {
@@ -25,28 +25,33 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      }
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /\.svg$/,
+        },
+      },
+    },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/contents`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `data`,
-        path: `${__dirname}/src/data`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-screenshot`,
-    `gatsby-transformer-yaml`,
-    {
-      resolve: `gatsby-transformer-screenshot`,
-      options: {
-        nodeTypes: [
-          `StartersYaml`,
-          `WhateverType`
-        ]
-      }
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

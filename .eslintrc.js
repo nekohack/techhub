@@ -10,6 +10,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     rules: {
         'react/display-name': 'off',
+        'react/prop-types': 'off',
         'prettier/prettier': [
             'error',
             {
