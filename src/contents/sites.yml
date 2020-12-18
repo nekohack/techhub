@@ -1,8 +1,12 @@
-- name: Web猫ブログ
+- name: Blog
   imageName: blog
   url: https://webneko.dev/
   type: Technical blog
-- name: Web猫ブログ
-  imageName: bakeneko2
-  url: https://yuukit.me/
-  type: Profile website
+- name: Performance
+  imageName: performance
+  url: https://performance.nekohack.app/
+  type: Website for Web Performance
+- name: Routine
+  imageName: routine
+  url: https://routine.nekohack.app/
+  type: Website for Routine Reading
