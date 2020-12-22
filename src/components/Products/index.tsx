@@ -4,12 +4,51 @@ import * as SC from './index.module.scss'
 
 const Zoom = require('react-reveal/Zoom')
 
-const Products: FC<{
-    blogImage: any
-    performanceImage: any
-    routineImage: any
-    data: any
-}> = ({ blogImage, performanceImage, routineImage, data }) => {
+type ProductsProps = {
+    blogImage: GatsbyTypes.Maybe<{
+        childImageSharp: GatsbyTypes.Maybe<{
+            fixed?: GatsbyTypes.Maybe<
+                Pick<
+                    GatsbyTypes.ImageSharpFixed,
+                    'base64' | 'width' | 'height' | 'src' | 'srcSet'
+                >
+            >
+        }>
+    }>
+    performanceImage: GatsbyTypes.Maybe<{
+        childImageSharp: GatsbyTypes.Maybe<{
+            fixed?: GatsbyTypes.Maybe<
+                Pick<
+                    GatsbyTypes.ImageSharpFixed,
+                    'base64' | 'width' | 'height' | 'src' | 'srcSet'
+                >
+            >
+        }>
+    }>
+    routineImage: GatsbyTypes.Maybe<{
+        childImageSharp: GatsbyTypes.Maybe<{
+            fixed?: GatsbyTypes.Maybe<
+                Pick<
+                    GatsbyTypes.ImageSharpFixed,
+                    'base64' | 'width' | 'height' | 'src' | 'srcSet'
+                >
+            >
+        }>
+    }>
+    data: Array<{
+        node: Pick<
+            GatsbyTypes.SitesYaml,
+            'id' | 'name' | 'imageName' | 'url' | 'type'
+        >
+    }>
+}
+
+const Products: FC<ProductsProps> = ({
+    blogImage,
+    performanceImage,
+    routineImage,
+    data,
+}) => {
     return (
         <Zoom>
             <section className={SC.wrapper}>
@@ -26,15 +65,17 @@ const Products: FC<{
                             >
                                 {imageName === 'blog' && (
                                     <Img
-                                        fixed={blogImage.childImageSharp.fixed}
+                                        fixed={
+                                            blogImage?.childImageSharp?.fixed!
+                                        }
                                         alt={imageName}
                                     />
                                 )}
                                 {imageName === 'performance' && (
                                     <Img
                                         fixed={
-                                            performanceImage.childImageSharp
-                                                .fixed
+                                            performanceImage?.childImageSharp
+                                                ?.fixed!
                                         }
                                         alt={imageName}
                                     />
@@ -42,7 +83,8 @@ const Products: FC<{
                                 {imageName === 'routine' && (
                                     <Img
                                         fixed={
-                                            routineImage.childImageSharp.fixed
+                                            routineImage?.childImageSharp
+                                                ?.fixed!
                                         }
                                         alt={imageName}
                                     />
