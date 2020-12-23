@@ -8,7 +8,7 @@ import GMMarker from '../GMMarker'
 import Footer from '../Footer'
 
 const Home: FC = () => {
-    const data = useStaticQuery(graphql`
+    const data = useStaticQuery<GatsbyTypes.SiteTitleQueryQuery>(graphql`
         query SiteTitleQuery {
             site {
                 siteMetadata {
