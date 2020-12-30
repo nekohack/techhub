@@ -52,7 +52,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-typegen`,
+    // `gatsby-plugin-typegen`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
