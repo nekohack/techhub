@@ -15,8 +15,8 @@ updates:
     open-pull-requests-limit: 10
     automerged_updates:
       - match:
-          dependency_type: all
-          update_type: semver:minor
+        dependency_type: all
+        update_type: semver:minor
     reviewers:
       - 'jiyuujin'
     versioning-strategy: 'increase'
