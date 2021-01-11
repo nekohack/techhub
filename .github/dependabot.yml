@@ -1,5 +1,5 @@
 version: 2
-update_configs:
+updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
@@ -13,10 +13,6 @@ update_configs:
       - 'dependencies'
       - 'dependabot'
     open-pull-requests-limit: 10
-    automerged_updates:
-      - match:
-          dependency_type: all
-          update_type: semver:minor
     reviewers:
       - 'jiyuujin'
     versioning-strategy: 'increase'
