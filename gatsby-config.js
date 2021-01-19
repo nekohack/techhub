@@ -7,7 +7,7 @@ module.exports = {
     description: `nekohack gives your complex the opportunity to increase the percentage of happiness, enjoyment of your staff and as a result, bring productivity to your workspace.`,
     author: `Yuma Kitamura`,
     locale: `Osaka, Kyoto in Japan`,
-    url: `https://yuukit.me/`,
+    siteUrl: `https://yuukit.me/`,
     image: `src/images/bakeneko2.png`,
   },
   plugins: [
@@ -52,6 +52,18 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://nekohack.app/`,
+        policy: [
+          {
+            userAgent: `*`,
+            allow: `/`
+          },
+        ],
+      },
+    },
     // `gatsby-plugin-typegen`,
     {
       resolve: `gatsby-plugin-manifest`,
