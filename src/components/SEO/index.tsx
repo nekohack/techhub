@@ -31,7 +31,11 @@ const SEO = ({
                 url: `${url}${pathname || '/'}`,
             }
             return (
-                <Helmet title={seo.title} titleTemplate={titleTemplate}>
+                <Helmet
+                    title={seo.title}
+                    titleTemplate={titleTemplate}
+                    htmlAttributes={{ lang: 'ja' }}
+                >
                     <meta name="image" content={seo.image} />
                     <meta name="description" content={seo.description} />
                     <meta property="og:url" content={seo.url} />
