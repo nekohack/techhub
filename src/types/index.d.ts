@@ -5,7 +5,7 @@ export type SiteMetadataTypes = {
         description: string
         author: string
         locale: string
-        url: string
+        siteUrl: string
         image: string
     }
 }
