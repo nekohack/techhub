@@ -40,6 +40,6 @@
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.8.2",
     "dotenv": "^8.2.0",
-    "sass": "^1.29.0"
+    "sass": "^1.32.5"
   }
 }
