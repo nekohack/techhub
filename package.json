@@ -18,7 +18,7 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sass": "^2.6.0",
-    "gatsby-plugin-sharp": "^2.12.2",
+    "gatsby-plugin-sharp": "^2.13.2",
     "gatsby-plugin-typegen": "^2.2.2",
     "gatsby-plugin-typescript": "^2.7.0",
     "gatsby-source-filesystem": "^2.9.1",
