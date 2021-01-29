@@ -1,9 +1,11 @@
 import React, { FC } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import feeds from '../../contents/feeds.json'
 import Hero from '../Hero'
 import Avatar from '../Avatar'
 import Landing from '../Landing'
 import Products from '../Products'
+import Feeds from '../Feeds'
 import GMMarker from '../GMMarker'
 import Footer from '../Footer'
 
@@ -65,6 +67,7 @@ const Home: FC = () => {
                 routineImage={data?.routineImage}
                 data={data?.allSitesYaml.edges}
             />
+            <Feeds data={feeds} />
             <GMMarker />
             <Footer />
         </>
