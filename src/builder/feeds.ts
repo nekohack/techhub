@@ -1,5 +1,6 @@
 import fs from 'fs-extra'
 import Parser from 'rss-parser'
+import dayjs from 'dayjs'
 
 import { members } from '../contents/members'
 
@@ -68,12 +69,18 @@ async function getMemberFeedItems(member: Member): Promise<PostItem[]> {
     const feedItems = await getFeedItemsFromSources(sources)
     if (!feedItems) return []
 
-    return feedItems.map((item) => {
-        return {
-            ...item,
-            authorName: name,
-        }
-    })
+    return feedItems
+        .sort((a: any, b: any) => {
+            if (dayjs(a.pubDate) < dayjs(b.pubDate)) return 1
+            if (dayjs(a.pubDate) > dayjs(b.pubDate)) return -1
+            return 0
+        })
+        .map((item) => {
+            return {
+                ...item,
+                authorName: name,
+            }
+        })
 }
 
 ;(async function () {
