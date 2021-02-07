@@ -8,6 +8,7 @@ export const members = [
         sources: [
             'https://webneko.dev/feeds.xml',
             'https://qiita.com/jiyuujin/feed.atom',
+            'https://note.com/uraneko/rss',
         ],
         website: 'https://webneko.dev',
     },
