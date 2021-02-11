@@ -1,11 +1,11 @@
 name: Deploy to S3
 
 on:
-  push:
-    branches:
-      - master
-      - feature/deploy-to-s3
-      - feature/export-feeds
+  schedule:
+    - cron: '0/5 * * * *'
+#  push:
+#    branches:
+#      - master
 
 jobs:
   deploy:
