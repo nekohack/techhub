@@ -1,6 +1,12 @@
 import fs from 'fs-extra'
 import Parser from 'rss-parser'
+
 import dayjs from 'dayjs'
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter'
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
+
+dayjs.extend(isSameOrAfter)
+dayjs.extend(isSameOrBefore)
 
 import { members } from '../contents/members'
 
@@ -69,18 +75,12 @@ async function getMemberFeedItems(member: Member): Promise<PostItem[]> {
     const feedItems = await getFeedItemsFromSources(sources)
     if (!feedItems) return []
 
-    return feedItems
-        .sort((a: any, b: any) => {
-            if (dayjs(a.pubDate) < dayjs(b.pubDate)) return 1
-            if (dayjs(a.pubDate) > dayjs(b.pubDate)) return -1
-            return 0
-        })
-        .map((item) => {
-            return {
-                ...item,
-                authorName: name,
-            }
-        })
+    return feedItems.map((item) => {
+        return {
+            ...item,
+            authorName: name,
+        }
+    })
 }
 
 ;(async function () {
@@ -88,6 +88,12 @@ async function getMemberFeedItems(member: Member): Promise<PostItem[]> {
         const items = await getMemberFeedItems(member)
         if (items) allPostItems = [...allPostItems, ...items]
     }
-    allPostItems.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds)
-    fs.writeJsonSync('src/contents/feeds.json', allPostItems)
+    fs.writeJsonSync(
+        'src/contents/feeds.json',
+        allPostItems.sort((a: any, b: any) => {
+            if (dayjs(a.pubDate).isAfter(dayjs(b.pubDate))) return -1
+            if (dayjs(a.pubDate).isBefore(dayjs(b.pubDate))) return 1
+            return 0
+        })
+    )
 })()
