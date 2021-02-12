@@ -24,8 +24,6 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
         }
     }
 
-    const reactions: string[] = ['🐈', '😸', '😹', '😻', '😾']
-
     const dateFormat = (d: string) => {
         return dayjs(d).format('YYYY/MM/DD HH:mm')
     }
@@ -44,13 +42,7 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
                                 className={SC.feedCard}
                             >
                                 <span className={SC.reactionImg}>
-                                    {
-                                        reactions[
-                                            Math.floor(
-                                                Math.random() * reactions.length
-                                            )
-                                        ]
-                                    }
+                                    {filter.author.slice(0, 1)}
                                 </span>
                                 <div>
                                     <div className={SC.title}>
