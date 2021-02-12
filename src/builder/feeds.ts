@@ -35,6 +35,7 @@ type FeedItem = {
     contentSnippet: string
     isoDate: string
     pubDate: string
+    author: string
     dateMiliSeconds: number
 }
 
@@ -45,6 +46,16 @@ async function fetchFeedItems(url: string) {
     const feed = await parser.parseURL(url)
     if (!feed?.items?.length) return []
 
+    let author: string = ''
+    members.forEach((member) => {
+        for (const source of member.sources) {
+            if (source === url) {
+                author = member.name
+                break
+            }
+        }
+    })
+
     return feed.items
         .map(({ title, contentSnippet, link, isoDate, pubDate }) => {
             return {
@@ -52,6 +63,7 @@ async function fetchFeedItems(url: string) {
                 contentSnippet: contentSnippet?.replace(/\n/g, ''),
                 link,
                 pubDate,
+                author,
                 // dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
             }
         })
