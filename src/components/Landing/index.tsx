@@ -15,7 +15,6 @@ const Landing: FC<LandingProps> = ({ data }: LandingProps) => (
             <div className={SC.wrapper}>
                 <h1>{`We are ${data?.title}`}</h1>
                 <h2>{`Locale: ${data?.locale}`}</h2>
-                <p>{data?.description}</p>
             </div>
         </section>
     </Zoom>
