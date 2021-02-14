@@ -8,7 +8,7 @@ export default class IndexPage extends React.Component<{}> {
     public render() {
         return (
             <Layout>
-                <SEO title="nekohack Portal" />
+                <SEO title="nekohack Tech Hub" />
                 <div className={SC.container}>
                     <Home />
                 </div>
