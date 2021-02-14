@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import feeds from '../../contents/feeds.json'
-import Hero from '../Hero'
 import Avatar from '../Avatar'
 import Landing from '../Landing'
 import Products from '../Products'
@@ -58,7 +57,6 @@ const Home: FC = () => {
 
     return (
         <>
-            <Hero title="Hi, I'm Yuma Kitamura" />
             <Avatar />
             <Landing data={data?.site?.siteMetadata} />
             <Products
