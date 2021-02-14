@@ -2,8 +2,8 @@ require(`dotenv`).config()
 
 module.exports = {
   siteMetadata: {
-    title: `nekohack Portal`,
-    titleTemplate: `%s | Portal`,
+    title: `nekohack Tech Hub`,
+    titleTemplate: `%s | Tech Hub`,
     description: `nekohack gives your complex the opportunity to increase the percentage of happiness, enjoyment of your staff and as a result, bring productivity to your workspace.`,
     author: `Yuma Kitamura`,
     locale: `Osaka, Kyoto in Japan`,
@@ -68,8 +68,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `nekohack Portal`,
-        short_name: `Portal`,
+        name: `nekohack Tech Hub`,
+        short_name: `TechHub`,
         lang: `en`,
         start_url: `/`,
         icon: `src/static/icons/nekohack.png`,
