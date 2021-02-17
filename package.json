@@ -21,7 +21,7 @@
     "gatsby-plugin-sass": "^3.2.0",
     "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-plugin-typegen": "^2.2.2",
-    "gatsby-plugin-typescript": "^2.7.0",
+    "gatsby-plugin-typescript": "^2.12.0",
     "gatsby-source-filesystem": "^2.9.1",
     "gatsby-transformer-screenshot": "^2.9.0",
     "gatsby-transformer-sharp": "^2.10.1",
