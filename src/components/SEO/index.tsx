@@ -21,7 +21,13 @@ const SEO = ({
         query={query}
         render={({
             site: {
-                siteMetadata: { title, titleTemplate, description, siteUrl, image },
+                siteMetadata: {
+                    title,
+                    titleTemplate,
+                    description,
+                    siteUrl,
+                    image,
+                },
             },
         }) => {
             const seo = {

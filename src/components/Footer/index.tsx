@@ -5,7 +5,7 @@ const Footer: FC = () => (
     <footer className={SC.footer}>
         <p className={SC.contact}>
             <a
-                href="https://webneko.dev/contact"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfFzwsCVnFbu-lV0Jz2fEYHR97hpBSK2g6kEwc-G1fo976ngA/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
             >
