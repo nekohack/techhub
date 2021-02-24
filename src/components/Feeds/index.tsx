@@ -2,8 +2,6 @@ import React, { FC } from 'react'
 import * as SC from './index.module.scss'
 import dayjs from 'dayjs'
 
-const Zoom = require('react-reveal/Zoom')
-
 type FeedsProps = {
     data:
         | Array<{
@@ -29,9 +27,10 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
     }
 
     return (
-        <Zoom>
-            <section className={SC.wrapper}>
-                <div className={SC.feedWrapper}>
+        <section className={SC.top}>
+            <div className={SC.wrapper}>
+                <h1>Feeds</h1>
+                <div className={SC.feeds}>
                     {filters.map((filter, index) => {
                         return (
                             <a
@@ -56,8 +55,8 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
                         )
                     })}
                 </div>
-            </section>
-        </Zoom>
+            </div>
+        </section>
     )
 }
 

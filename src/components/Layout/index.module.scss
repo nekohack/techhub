@@ -3,12 +3,18 @@ body {
   padding: 0;
   margin: 0;
   color: #000;
-  background-color: #fff;
 }
 
-/*@media (prefers-color-scheme: dark) {
+a {
+  color: #000 !important;
+}
+
+@media (prefers-color-scheme: dark) {
   body {
     color: #fff;
-    background-color: #303030;
   }
-}*/
+
+  a {
+    color: #fff !important;
+  }
+}
