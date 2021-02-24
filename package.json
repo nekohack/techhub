@@ -9,7 +9,7 @@
     "lint:fix": "eslint ./ --ext ts,tsx --fix"
   },
   "dependencies": {
-    "@babel/core": "^7.12.13",
+    "@babel/core": "^7.13.1",
     "@nekohack/normalize.css": "^1.2.1",
     "dayjs": "^1.10.4",
     "gatsby": "^2.27.4",
