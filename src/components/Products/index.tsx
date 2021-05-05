@@ -48,10 +48,10 @@ const Products: FC<ProductsProps> = ({
     data,
 }) => {
     return (
-        <section className={SC.top}>
-            <div className={SC.wrapper}>
+        <section className="wrapper">
+            <div className="section">
                 <h1>Products</h1>
-                <div className={SC.info}>
+                <div className="info">
                     {data.map((node: any, index: number) => {
                         const name = data[index].node.name
                         const imageName = data[index].node.imageName
