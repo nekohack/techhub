@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.12.13",
-    "@nekohack/normalize.css": "^1.2.1",
+    "@nekohack/normalize.css": "^2.1.1",
     "dayjs": "^1.10.4",
     "gatsby": "^2.27.4",
     "gatsby-image": "^2.10.0",

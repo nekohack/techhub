@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import * as SC from './index.module.scss'
 import dayjs from 'dayjs'
 
 type FeedsProps = {
@@ -27,10 +26,10 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
     }
 
     return (
-        <section className={SC.top}>
-            <div className={SC.wrapper}>
+        <section className="wrapper">
+            <div className="section">
                 <h1>Feeds</h1>
-                <div className={SC.feeds}>
+                <div className="feeds">
                     {filters.map((filter, index) => {
                         return (
                             <a
@@ -38,16 +37,16 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
                                 href={filter.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={SC.feedCard}
+                                className="feed-card"
                             >
-                                <span className={SC.reactionImg}>
+                                <span className="reaction-img">
                                     {filter.author.slice(0, 1)}
                                 </span>
                                 <div>
-                                    <div className={SC.title}>
+                                    <div className="title">
                                         {filter.title}
                                     </div>
-                                    <div className={SC.date}>
+                                    <div className="date">
                                         {dateFormat(filter.pubDate)}
                                     </div>
                                 </div>
