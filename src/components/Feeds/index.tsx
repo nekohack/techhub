@@ -26,7 +26,6 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
     }
 
     return (
-        <section className="wrapper">
             <div className="section">
                 <h1>Feeds</h1>
                 <div className="feeds">
@@ -55,7 +54,6 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
                     })}
                 </div>
             </div>
-        </section>
     )
 }
 

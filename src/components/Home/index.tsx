@@ -4,8 +4,6 @@ import feeds from '../../contents/feeds.json'
 import Landing from '../Landing'
 import Products from '../Products'
 import Feeds from '../Feeds'
-import GMMarker from '../GMMarker'
-import Footer from '../Footer'
 
 const Home: FC = () => {
     const data = useStaticQuery(graphql`
@@ -55,7 +53,7 @@ const Home: FC = () => {
     `)
 
     return (
-        <>
+        <main>
             <Landing data={data?.site?.siteMetadata} />
             <Products
                 blogImage={data?.blogImage}
@@ -64,9 +62,7 @@ const Home: FC = () => {
                 data={data?.allSitesYaml.edges}
             />
             <Feeds data={feeds} />
-            <GMMarker />
-            <Footer />
-        </>
+        </main>
     )
 }
 

@@ -7,12 +7,10 @@ type LandingProps = {
 }
 
 const Landing: FC<LandingProps> = ({ data }: LandingProps) => (
-    <section className="wrapper">
-        <div className="section">
-            <h1>{`We are ${data?.title}`}</h1>
-            <h2>{`Locale: ${data?.locale}`}</h2>
-        </div>
-    </section>
+    <div className="section">
+        <h1>{data?.title}</h1>
+        <h2>{`Locale: ${data?.locale}`}</h2>
+    </div>
 )
 
 export default Landing
