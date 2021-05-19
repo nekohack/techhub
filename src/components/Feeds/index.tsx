@@ -16,7 +16,7 @@ type FeedsProps = {
 const Feeds: FC<FeedsProps> = ({ data }) => {
     let filters = []
     for (let index = 0; index < data.length; index++) {
-        if (index < 10) {
+        if (index < 4) {
             filters.push(data[index])
         }
     }
@@ -26,34 +26,34 @@ const Feeds: FC<FeedsProps> = ({ data }) => {
     }
 
     return (
-            <div className="section">
-                <h1>Feeds</h1>
-                <div className="feeds">
-                    {filters.map((filter, index) => {
-                        return (
-                            <a
-                                key={index}
-                                href={filter.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="feed-card"
-                            >
-                                <span className="reaction-img">
-                                    {filter.author.slice(0, 1)}
-                                </span>
-                                <div>
-                                    <div className="title">
-                                        {filter.title}
-                                    </div>
-                                    <div className="date">
-                                        {dateFormat(filter.pubDate)}
-                                    </div>
+        <div className="section">
+            <h1>Feeds</h1>
+            <div className="feeds">
+                {filters.map((filter, index) => {
+                    return (
+                        <a
+                            key={index}
+                            href={filter.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="feed-card"
+                        >
+                            <span className="reaction-img">
+                                {filter.author.slice(0, 1)}
+                            </span>
+                            <div>
+                                <div className="title">
+                                    {filter.title}
                                 </div>
-                            </a>
-                        )
-                    })}
-                </div>
+                                <div className="date">
+                                    {dateFormat(filter.pubDate)}
+                                </div>
+                            </div>
+                        </a>
+                    )
+                })}
             </div>
+        </div>
     )
 }
 
