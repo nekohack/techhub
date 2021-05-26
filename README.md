@@ -1,10 +1,6 @@
-<p align="center">
-  <img src='https://github.com/nekohack/techhub/blob/master/src/images/icons/nekohack.svg?sanitize=true' alt="Me" title="Me" width="256px" height='256px'/>
-</p>
+# Tech Hub
 
-<div align="center">
-  <h2>nekohack | Tech Hub</h2>
-</div>
+Website pausing..
 
 ## Skills
 
